@@ -16,7 +16,7 @@ public class DueDateCalculator {
         this.turningTime = new WorkingHours(turningTime);
     }
 
-    public LocalDateTime calculate() {
+    public LocalDateTime calculateDueDate() {
         Duration duration = turningTime.calculateDuration();
         RawDueDate rawDueDate = new RawDueDate(submitDate.plus(duration));
         return rawDueDate.correctNightAndWeekendIfNeeded();

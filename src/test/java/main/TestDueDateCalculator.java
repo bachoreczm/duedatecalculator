@@ -2,7 +2,6 @@ package main;
 
 import org.junit.jupiter.api.Test;
 
-import java.time.Duration;
 import java.time.LocalDateTime;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -14,7 +13,7 @@ public class TestDueDateCalculator {
         LocalDateTime tuesdayThreePm = LocalDateTime.parse("2020-02-11T15:00:00");
         DueDateCalculator dueDateCalculator = new DueDateCalculator(tuesdayThreePm, 1);
 
-        LocalDateTime dueDate = dueDateCalculator.calculate();
+        LocalDateTime dueDate = dueDateCalculator.calculateDueDate();
 
         assertEquals(LocalDateTime.parse("2020-02-11T16:00:00"), dueDate);
     }
@@ -24,7 +23,7 @@ public class TestDueDateCalculator {
         LocalDateTime tuesdayHalfPastTwoPm = LocalDateTime.parse("2020-02-11T14:30:00");
         DueDateCalculator dueDateCalculator = new DueDateCalculator(tuesdayHalfPastTwoPm, 2);
 
-        LocalDateTime dueDate = dueDateCalculator.calculate();
+        LocalDateTime dueDate = dueDateCalculator.calculateDueDate();
 
         assertEquals(LocalDateTime.parse("2020-02-11T16:30:00"), dueDate);
     }
@@ -34,7 +33,7 @@ public class TestDueDateCalculator {
         LocalDateTime tuesdayThreePm = LocalDateTime.parse("2020-02-11T15:00:00");
         DueDateCalculator dueDateCalculator = new DueDateCalculator(tuesdayThreePm, 3);
 
-        LocalDateTime dueDate = dueDateCalculator.calculate();
+        LocalDateTime dueDate = dueDateCalculator.calculateDueDate();
 
         assertEquals(LocalDateTime.parse("2020-02-12T10:00:00"), dueDate);
     }
@@ -44,7 +43,7 @@ public class TestDueDateCalculator {
         LocalDateTime tuesdayFivePm = LocalDateTime.parse("2020-02-11T17:00:00");
         DueDateCalculator dueDateCalculator = new DueDateCalculator(tuesdayFivePm, 7);
 
-        LocalDateTime dueDate = dueDateCalculator.calculate();
+        LocalDateTime dueDate = dueDateCalculator.calculateDueDate();
 
         assertEquals(LocalDateTime.parse("2020-02-12T16:00:00"), dueDate);
     }
@@ -54,7 +53,7 @@ public class TestDueDateCalculator {
         LocalDateTime tuesdayFourPm = LocalDateTime.parse("2020-02-11T16:00:00");
         DueDateCalculator dueDateCalculator = new DueDateCalculator(tuesdayFourPm, 18);
 
-        LocalDateTime dueDate = dueDateCalculator.calculate();
+        LocalDateTime dueDate = dueDateCalculator.calculateDueDate();
 
         assertEquals(LocalDateTime.parse("2020-02-14T10:00:00"), dueDate);
     }
@@ -64,7 +63,7 @@ public class TestDueDateCalculator {
         LocalDateTime tuesdayFourPm = LocalDateTime.parse("2020-02-11T16:00:00");
         DueDateCalculator dueDateCalculator = new DueDateCalculator(tuesdayFourPm, 26);
 
-        LocalDateTime dueDate = dueDateCalculator.calculate();
+        LocalDateTime dueDate = dueDateCalculator.calculateDueDate();
 
         assertEquals(LocalDateTime.parse("2020-02-17T10:00:00"), dueDate);
     }
@@ -74,7 +73,7 @@ public class TestDueDateCalculator {
         LocalDateTime tuesdayFourPm = LocalDateTime.parse("2020-02-11T16:00:00");
         DueDateCalculator dueDateCalculator = new DueDateCalculator(tuesdayFourPm, 66);
 
-        LocalDateTime dueDate = dueDateCalculator.calculate();
+        LocalDateTime dueDate = dueDateCalculator.calculateDueDate();
 
         assertEquals(LocalDateTime.parse("2020-02-24T10:00:00"), dueDate);
     }
@@ -84,7 +83,7 @@ public class TestDueDateCalculator {
         LocalDateTime tuesdayFourPm = LocalDateTime.parse("2020-02-11T16:02:00");
         DueDateCalculator dueDateCalculator = new DueDateCalculator(tuesdayFourPm, 66);
 
-        LocalDateTime dueDate = dueDateCalculator.calculate();
+        LocalDateTime dueDate = dueDateCalculator.calculateDueDate();
 
         assertEquals(LocalDateTime.parse("2020-02-24T10:02:00"), dueDate);
     }
@@ -94,7 +93,7 @@ public class TestDueDateCalculator {
         LocalDateTime tuesdayFourPm = LocalDateTime.parse("2020-02-11T09:00:00");
         DueDateCalculator dueDateCalculator = new DueDateCalculator(tuesdayFourPm, 8);
 
-        LocalDateTime dueDate = dueDateCalculator.calculate();
+        LocalDateTime dueDate = dueDateCalculator.calculateDueDate();
 
         assertEquals(LocalDateTime.parse("2020-02-11T17:00:00"), dueDate);
     }
@@ -104,7 +103,7 @@ public class TestDueDateCalculator {
         LocalDateTime tuesdayFourPm = LocalDateTime.parse("2020-02-10T09:00:00");
         DueDateCalculator dueDateCalculator = new DueDateCalculator(tuesdayFourPm, 40);
 
-        LocalDateTime dueDate = dueDateCalculator.calculate();
+        LocalDateTime dueDate = dueDateCalculator.calculateDueDate();
 
         assertEquals(LocalDateTime.parse("2020-02-14T17:00:00"), dueDate);
     }
