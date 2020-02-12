@@ -19,6 +19,6 @@ class WeekendCorrection implements Function<LocalDateTime, LocalDateTime> {
 
     private boolean isWeekend(LocalDateTime dueDate) {
         DayOfWeek dayOfWeek = dueDate.toLocalDate().getDayOfWeek();
-        return dayOfWeek.equals(DayOfWeek.SATURDAY) || dayOfWeek.equals(DayOfWeek.SUNDAY);
+        return DayOfWeek.SATURDAY.equals(dayOfWeek) || DayOfWeek.SUNDAY.equals(dayOfWeek);
     }
 }
